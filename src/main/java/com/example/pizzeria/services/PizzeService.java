@@ -1,5 +1,6 @@
 package com.example.pizzeria.services;
 
+import com.example.pizzeria.entities.Pizza;
 import com.example.pizzeria.repositories.PizzeRepositories;
 import com.example.pizzeria.repositories.ToppingsRepositories;
 import lombok.extern.slf4j.Slf4j;
@@ -17,5 +18,10 @@ public class PizzeService {
     public PizzeService(PizzeRepositories pizzeRepositories, ToppingsRepositories toppingsRepositories) {
         this.pizzeRepositories = pizzeRepositories;
         this.toppingsRepositories = toppingsRepositories;
+    }
+
+    public void savePizza(Pizza newPizza){
+        this.pizzeRepositories.save(newPizza);
+        log.info("la pizza " + newPizza.getName() + " è stata salvata correttamente");
     }
 }
