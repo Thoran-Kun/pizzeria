@@ -1,5 +1,7 @@
 package com.example.pizzeria.services;
 
+import com.example.pizzeria.entities.Pizza;
+import com.example.pizzeria.entities.Topping;
 import com.example.pizzeria.repositories.ToppingsRepositories;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,5 +16,10 @@ public class ToppingsService {
     @Autowired
     public ToppingsService(ToppingsRepositories toppingsRepositories) {
         this.toppingsRepositories = toppingsRepositories;
+    }
+
+    public void saveTopping(Topping newTopping){
+        this.toppingsRepositories.save(new Topping());
+        log.info("il topping " + newTopping.getName() + " è stato salvato correttamente");
     }
 }
