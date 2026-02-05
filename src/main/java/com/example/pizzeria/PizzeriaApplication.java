@@ -8,7 +8,7 @@ public class PizzeriaApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(PizzeriaApplication.class, args);
-        System.out.println("----------- PIZZERIA ------------");
+        System.out.println("----------- PIZZERIA -----------");
 	}
 
 }
